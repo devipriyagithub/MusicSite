@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Secret Music</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: black;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        input {
+            padding: 12px;
+            font-size: 18px;
+            width: 100px;
+            text-align: center;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: none;
+            background: #ff5500;
+            color: white;
+            cursor: pointer;
+        }
+
+        #content {
+            display: none;
+            padding: 20px;
+        }
+
+        audio {
+            margin-top: 15px;
+            width: 90%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="login">
+        <h2>Enter 3-digit password 🔐</h2>
+        <input type="password" id="pass" maxlength="3"><br>
+        <button onclick="checkPass()">Enter</button>
+    </div>
+
+    <div id="content">
+        <h2>🎧 Welcome</h2>
+
+        <p>Sky – Playboi Carti</p>
+        <audio controls>
+            <source src="sky.mp3" type="audio/mpeg">
+        </audio>
+
+        <p>Superhero – Metro Boomin, Future, Chris Brown</p>
+        <audio controls>
+            <source src="superhero.mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
+
+    <script>
+function checkPass() {
+  let password = document.getElementById("pass").value;
+
+  if(password === "347") {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("content").style.display = "block";
+  } else {
+    alert("Wrong password");
+  }
+}
+    </script>
+
+</body>
+</html>
