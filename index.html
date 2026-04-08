@@ -10,9 +10,12 @@
     font-family: Arial;
     color: white;
     text-align: center;
-    transition: background 0.5s ease;
-    background-size: cover;
-    background-position: center;
+
+    /* FIXES */
+    background-size: cover;        /* fills screen properly */
+    background-position: center;   /* keeps image centered */
+    background-repeat: no-repeat;  /* prevents tiling (double image) */
+    background-attachment: fixed;  /* smoother look */
   }
 
   .bg1 {
@@ -81,12 +84,20 @@ function checkPass() {
   if(password === "347") {
     document.getElementById("login").style.display = "none";
     document.getElementById("content").style.display = "block";
+          startAutoChange(); // start auto background
   } else {
     alert("Wrong password");
   }
 }
         function changeBg(bg) {
   document.body.className = bg;
+}
+        // auto change every 1 minute
+function startAutoChange() {
+  setInterval(() => {
+    index = (index + 1) % backgrounds.length;
+    document.body.className = backgrounds[index];
+  }, 60000); // 60000 ms = 1 minute
 }
     </script>
 
