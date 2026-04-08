@@ -40,11 +40,34 @@
     cursor: pointer;
   }
 
+  /* Layout container */
   #content {
     display: none;
+    display: flex;
+    justify-content: flex-start; /* moves left */
+    align-items: flex-start;
     padding: 20px;
-    background: rgba(0,0,0,0.6); /* makes text readable */
+    gap: 20px;
   }
+
+  /* Left panel (music player) */
+  .player {
+    width: 300px;
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  /* Optional right side (empty or future content) */
+  .right {
+    flex: 1;
+  }
+
+  audio {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
 </style>
         
 </head>
