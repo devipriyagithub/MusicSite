@@ -4,53 +4,55 @@
     <title>Secret Music</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background: black;
-            color: white;
-            text-align: center;
-        }
+<style>
+  body {
+    margin: 0;
+    font-family: Arial;
+    color: white;
+    text-align: center;
+    transition: background 0.5s ease;
+    background-size: cover;
+    background-position: center;
+  }
 
-        .container {
-            margin-top: 100px;
-        }
+  .bg1 {
+    background-image: url('Goku.jpg');
+  }
 
-        input {
-            padding: 12px;
-            font-size: 18px;
-            width: 100px;
-            text-align: center;
-            border-radius: 8px;
-            border: none;
-        }
+  .bg2 {
+    background-image: url('Gojo.jpg');
+  }
 
-        button {
-            padding: 12px 20px;
-            font-size: 16px;
-            margin-top: 10px;
-            border-radius: 8px;
-            border: none;
-            background: #ff5500;
-            color: white;
-            cursor: pointer;
-        }
+  .bg3 {
+    background-image: url('Luffy.jpg');
+  }
 
-        #content {
-            display: none;
-            padding: 20px;
-        }
+  button {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+    background: #ff5500;
+    color: white;
+    cursor: pointer;
+  }
 
-        audio {
-            margin-top: 15px;
-            width: 90%;
-        }
-    </style>
+  #content {
+    display: none;
+    padding: 20px;
+    background: rgba(0,0,0,0.6); /* makes text readable */
+  }
+</style>
+        
 </head>
 
-<body>
+<body class="bg1">
 
+<button onclick="changeBg('bg1')">Goku</button>
+<button onclick="changeBg('bg2')">Gojo</button>
+<button onclick="changeBg('bg3')">Luffy</button>
+
+    
     <div class="container" id="login">
         <h2>Enter 3-digit password 🔐</h2>
         <input type="password" id="pass" maxlength="3"><br>
@@ -82,6 +84,9 @@ function checkPass() {
   } else {
     alert("Wrong password");
   }
+}
+        function changeBg(bg) {
+  document.body.className = bg;
 }
     </script>
 
